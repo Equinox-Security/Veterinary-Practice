@@ -69,7 +69,7 @@ main{flex:1;}
 .quick-link h3{font-size:0.975rem;font-weight:600;color:var(--forest);}
 .quick-link p{font-size:0.825rem;color:var(--text-muted);line-height:1.5;}
 
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}\n@media(min-width:600px){.service-grid{grid-template-columns:repeat(2,1fr);}}\n@media(min-width:900px){.service-grid{grid-template-columns:repeat(3,1fr);}}
+.service-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;}\n@media(min-width:501px){.service-grid{grid-template-columns:repeat(2,1fr);}}\n@media(min-width:901px){.service-grid{grid-template-columns:repeat(3,1fr);}}
 .svc-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;align-items:center;justify-content:center;padding:1rem;}
 .svc-modal-overlay.open{display:flex;}
 .svc-modal{background:#fff;border-radius:12px;max-width:640px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
@@ -166,7 +166,7 @@ footer strong{color:rgba(255,255,255,0.9);font-weight:500;}
 .pet-record-value{font-size:0.9rem;color:var(--text);line-height:1.5;}
 .pet-record-note{font-size:0.78rem;color:var(--text-muted);margin-top:0.25rem;font-style:italic;}
 
-.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;padding:2.5rem 2rem;max-width:1100px;margin:0 auto;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;padding:2.5rem 2rem;max-width:1100px;margin:0 auto;}\n@media(max-width:900px){.testimonials-grid{grid-template-columns:repeat(2,1fr);padding:1.5rem 1rem;}}\n@media(max-width:500px){.testimonials-grid{grid-template-columns:1fr;}}
 .testimonial-card{background:var(--card-bg);border-radius:10px;box-shadow:var(--shadow);padding:1.75rem;position:relative;border-top:3px solid var(--forest);display:flex;flex-direction:column;min-height:320px;}
 .testimonial-quote{font-family:Georgia,serif;font-size:3.5rem;line-height:0.8;color:var(--forest-light);margin-bottom:0.5rem;}
 .testimonial-text{font-size:0.9rem;line-height:1.7;color:var(--text);margin-bottom:0.75rem;font-style:italic;flex:1;}
