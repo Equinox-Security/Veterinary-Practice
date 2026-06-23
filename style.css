@@ -199,8 +199,9 @@ footer strong{color:rgba(255,255,255,0.9);font-weight:500;}
 .portal-success{background:#1a2e1a;border:1px solid #b3f0c8;color:var(--accent);padding:0.6rem 0.85rem;border-radius:6px;font-size:0.82rem;margin-bottom:1rem;display:none;}
 @media(max-width:900px){
   .hamburger{display:flex;}
-  .nav-brand-row{justify-content:space-between;}
-  .nav-brand{font-size:0.9rem!important;max-width:calc(100% - 55px)!important;}
+  .nav-brand-row{position:relative;}
+  .nav-brand{font-size:0.9rem!important;}
+  .hamburger{position:absolute;right:0;top:50%;transform:translateY(-50%);}
   .nav-links-row{display:none;border-top:1px solid rgba(255,255,255,0.15);}
   .nav-links-row.open{display:flex;background:var(--forest);}
   .nav-links{flex-direction:column;width:100%;padding:0.75rem 0;gap:0;}
@@ -219,5 +220,5 @@ footer strong{color:rgba(255,255,255,0.9);font-weight:500;}
 .card{border-top:3px solid transparent;border-image:linear-gradient(135deg, #143043 71%, #4a90b8 100%) 1;}
 .hero-badge{background:linear-gradient(135deg, #143043 71%, #4a90b8 100%);border-color:transparent;}
 #header-vignette{position:fixed;top:0;left:0;width:100%;pointer-events:none;z-index:999;background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.55) 100%);}
-
+\n.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}\n@media(max-width:600px){.form-row{grid-template-columns:1fr;}}
 /* WIZARD-DATA:{"version":1,"file":"style.css","data":{"theme":"gradient","gradBase":"#143043","gradAccent":"#4a90b8","gradDir":"135deg","gradSplit":"71","tweaks":{"heroOpacity":0.9,"overlayTop":0.05,"overlayBottom":0.6,"svcOpacity":0.92,"cardRadius":10,"emergencyColor":"#680d03"}}} */
