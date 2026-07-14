@@ -7,7 +7,7 @@ compatibility_date = "2024-01-01"
 # Then fill in the id below.
 [[kv_namespaces]]
 binding = "RESET_TOKENS"
-id = "YOUR_KV_NAMESPACE_ID"
+id = "1d47c8bda08a46e19fe554ef77b74b84"
 
 # Secrets (do NOT put these here — set via CLI, they're encrypted at rest):
 #   wrangler secret put GITHUB_TOKEN
