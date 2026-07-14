@@ -46,8 +46,8 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 const GITHUB_OWNER  = 'Equinox-Security';   // TODO: fill in
-const GITHUB_REPO   = 'YOUR_REPO_NAME';         // TODO: fill in
-const GITHUB_BRANCH = 'Veterinary-Practice';
+const GITHUB_REPO   = 'Veterinary-Practice';         // TODO: fill in
+const GITHUB_BRANCH = 'main';
 const ROSTER_PATH   = 'roster.json.enc';
 const PORTAL_PATH   = 'portal.html';
 const PBKDF2_ITERATIONS = 200000;
