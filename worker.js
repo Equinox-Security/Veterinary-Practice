@@ -45,7 +45,7 @@
 //   GITHUB_OWNER, GITHUB_REPO, GITHUB_BRANCH
 // ─────────────────────────────────────────────────────────────────────────
 
-const GITHUB_OWNER  = 'Equinox-Security';   // TODO: fill in
+const GITHUB_OWNER  = 'Equinox-Security';         // TODO: fill in
 const GITHUB_REPO   = 'Veterinary-Practice';         // TODO: fill in
 const GITHUB_BRANCH = 'main';
 const ROSTER_PATH   = 'roster.json.enc';
@@ -53,32 +53,62 @@ const PORTAL_PATH   = 'portal.html';
 const PBKDF2_ITERATIONS = 200000;
 const RESET_CODE_TTL_SECONDS = 1800; // 30 minutes
 
+// Your GitHub Pages site and this Worker are different origins, so the
+// browser sends a CORS preflight (OPTIONS) before every POST with a JSON
+// body, and expects these headers on the actual response too. Without this,
+// every fetch() call from portal.html silently fails in the browser with a
+// CORS error — no server-side error, no log entry, just a dead request.
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type'
+};
+
+function withCORS(response) {
+  const headers = new Headers(response.headers);
+  for (const [k, v] of Object.entries(CORS_HEADERS)) headers.set(k, v);
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
+
 export default {
   async fetch(request, env) {
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { status: 204, headers: CORS_HEADERS });
+    }
     if (request.method !== 'POST') {
-      return new Response('Method not allowed', { status: 405 });
+      return withCORS(new Response('Method not allowed', { status: 405 }));
     }
 
     let payload;
     try {
       payload = await request.json();
     } catch (e) {
-      return new Response('Bad request: invalid JSON', { status: 400 });
+      return withCORS(new Response('Bad request: invalid JSON', { status: 400 }));
     }
 
     const action = payload.action || 'register';
     try {
-      if (action === 'reset_request') return await handleResetRequest(payload, env);
-      if (action === 'reset_confirm') return await handleResetConfirm(payload, env);
-      return await handleRegister(payload, env);
+      let result;
+      if (action === 'reset_request') result = await handleResetRequest(payload, env);
+      else if (action === 'reset_confirm') result = await handleResetConfirm(payload, env);
+      else result = await handleRegister(payload, env);
+      return withCORS(result);
     } catch (e) {
       console.error(e);
-      return new Response('Server error: ' + e.message, { status: 500 });
+      return withCORS(new Response('Server error: ' + e.message, { status: 500 }));
     }
   }
 };
 
 async function handleRegister(payload, env) {
+    // The registration form shares one Formspree ID with contact/testimonial
+    // forms (by choice, to keep things simple) — every submission from any
+    // of them hits this same webhook. This tag is how we tell them apart;
+    // anything else just gets a quiet 200 with no side effects.
+    if (payload.form_type !== 'portal_registration') {
+      return new Response('Ignored (not a portal registration submission)', { status: 200 });
+    }
+
     const name     = (payload.name || '').trim();
     const username = (payload.username || '').trim();
     const password = (payload.password || '').trim();
