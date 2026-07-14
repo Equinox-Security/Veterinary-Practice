@@ -1,4 +1,4 @@
-name = "vet-portal-registration"
+name = "auto-password-register"
 main = "worker.js"
 compatibility_date = "2024-01-01"
 
