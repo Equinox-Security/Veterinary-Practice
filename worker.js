@@ -101,14 +101,11 @@ export default {
 };
 
 async function handleRegister(payload, env) {
-    // The registration form shares one Formspree ID with contact/testimonial
-    // forms (by choice, to keep things simple) — every submission from any
-    // of them hits this same webhook. This tag is how we tell them apart;
-    // anything else just gets a quiet 200 with no side effects.
-    if (payload.form_type !== 'portal_registration') {
-      return new Response('Ignored (not a portal registration submission)', { status: 200 });
-    }
-
+    // Registration now posts directly to this Worker from portal.html — same
+    // as password reset already did. Formspree is no longer involved in this
+    // path at all (their ToS prohibits forms that collect passwords, which is
+    // exactly what got an account blocked). No form_type gate needed anymore:
+    // nothing but this specific registration form ever calls this endpoint.
     const name     = (payload.name || '').trim();
     const username = (payload.username || '').trim();
     const password = (payload.password || '').trim();
