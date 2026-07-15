@@ -1,0 +1,32 @@
+{
+  "rosterVersion": 1,
+  "exportedAt": "2026-07-15T01:29:20.216Z",
+  "clients": [
+    {
+      "name": "Jesus Christ",
+      "username": "Jesus.Christ",
+      "email": "Jesus@gmail.com",
+      "phone": "6035551212",
+      "hash": "991032ffbc3177a2eab6c2dd1d2732d01492a2c9072a5440c2881a6bb2473c4c",
+      "filename": "991032ffbc3177a2eab6c2dd1d2732d01492a2c9072a5440c2881a6bb2473c4c.html",
+      "pets": [
+        {
+          "name": "Jesus of the Christ",
+          "breed": "Dog-God",
+          "age": "2 years",
+          "weight": "79 lbs",
+          "appointment": "Jan 24, 2027",
+          "vaccination": "Up to date - Due Jan 24, 2027",
+          "note": "Healthy",
+          "labStatus": "ready"
+        }
+      ],
+      "dk": "MEm8O/eIQRoeZ7hE5kWuXGzxZfnFhyE3GY3ut/aPyDk=",
+      "wrap": {
+        "ct": "+u+QX3BZNB1et4v9x8HOKPJTgYjyIOoHlqhVLtjFuJWZAMySd+rjrsEv5sKCZBa2",
+        "salt": "lMdxZ9K1oK6GyimGKxu/iw==",
+        "iv": "5KVS7PA9YFkkC5Ya"
+      }
+    }
+  ]
+}

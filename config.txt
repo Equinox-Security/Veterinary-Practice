@@ -1,0 +1,275 @@
+// engine: vet
+var CONFIG = {
+  "pracName": "Dover New Hampshire Veterinary Hospital",
+  "tagline": "Compassionate Care for Your Companions",
+  "phone": "603-742-6438",
+  "email": "info@dovervet.com",
+  "address": "96 Durham Road",
+  "city": "Dover",
+  "state": "NH",
+  "zip": "03820",
+  "booking": "https://www.booking.com",
+  "formspree": "abcd1234",
+  "workerUrl": "",
+  "heroFile": "service1.png",
+  "accreditations": [
+    {
+      "id": 1782088335584,
+      "logo": "AAHA.png",
+      "name": "AAHA Accredited Practice",
+      "url": "https://www.aaha.org",
+      "offsetY": -20,
+      "enabled": true
+    },
+    {
+      "id": 1782088505180,
+      "logo": "AAEP.png",
+      "name": "American Association of Equine practitioners",
+      "url": "https://aaep.org/",
+      "offsetY": 0,
+      "enabled": false
+    },
+    {
+      "id": 1782088734303,
+      "logo": "ARAV.png",
+      "name": "Association of Reptilian and Amphibian Veterinarians",
+      "url": "https://arav.org/",
+      "offsetY": 0,
+      "enabled": false
+    },
+    {
+      "id": 1782088875214,
+      "logo": "AVMA.png",
+      "name": "American Veterinary Medical Association",
+      "url": "https://www.avma.org/",
+      "offsetY": 0,
+      "enabled": false
+    },
+    {
+      "id": 1782089789843,
+      "logo": "Cat-Friendly-Vet.png",
+      "name": "Established by the Feline Veterinary Medical Association",
+      "url": "https://catvets.com/cat-friendly/cfp/",
+      "offsetY": 0,
+      "enabled": false
+    },
+    {
+      "id": 1782090053903,
+      "logo": "FearFree.png",
+      "name": "Preventing and alleviating fear, anxiety, and stress in pets",
+      "url": "https://www.fearfree.com/",
+      "offsetY": 0,
+      "enabled": false
+    },
+    {
+      "id": 1782090189321,
+      "logo": "IVAPM.png",
+      "name": "International Veterinary Academy of Pain Management",
+      "url": "https://www.ivapm.org/",
+      "offsetY": 0,
+      "enabled": false
+    },
+    {
+      "id": 1782090329345,
+      "logo": "Low-Stress-Handling.png",
+      "name": "Commitment to appropriately training staff in Low Stress Handling® methods",
+      "url": "https://cattledogpublishing.com/certification-levels/",
+      "offsetY": 0,
+      "enabled": true
+    }
+  ],
+  "hours": {
+    "mon": "8:00am – 5:00pm",
+    "tue": "8:00am – 5:30pm",
+    "wed": "8:00am – 5:30pm",
+    "thu": "8:00am – 5:30pm",
+    "fri": "8:00am – 5:00pm",
+    "sat": "Closed",
+    "sun": "Closed"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/DoverVet/",
+    "instagram": "https://www.instagram.com/DoverVet/",
+    "twitter": "https://www.x.com/DoverVet/",
+    "youtube": "https://www.youtube.com/@DoverVet/",
+    "tiktok": "https://tiktok.com/@DoverVet/",
+    "linkedin": "https://linkedin.com/DoverVet/DoverVet"
+  },
+  "theme": "gradient",
+  "gradBase": "#143043",
+  "gradAccent": "#4a90b8",
+  "gradDir": "center",
+  "gradSplit": "65",
+  "svcSlideStyle": "blur",
+  "svcPhotos": "service1.png\nservice2.png\nservice3.png\nservice4.png\nservice5.png\nservice1-1.png\nservice2-1.png\nservice3-1.png\nservice4-1.png\nservice5-1.png",
+  "tweaks": {
+    "heroOpacity": 90,
+    "overlayTop": 5,
+    "svcOpacity": 92,
+    "radius": 10,
+    "vignette": 70,
+    "emergColor": "#680d03"
+  },
+  "demoEnabled": false,
+  "demoMsg": "",
+  "demoOffer": "https://equinox-security.github.io/Sunnybrooke/offer.html",
+  "demoName": "EQ Enterprise",
+  "demoEmail": "Equinox68@gmail.com",
+  "demoPhone": "6035551212",
+  "services": [
+    "Wellness Exams",
+    "Vaccinations",
+    "Parasite Control",
+    "Nutritional Counseling",
+    "Behavioral Counseling",
+    "Microchip ID",
+    "Radiology / X-Ray",
+    "In-House Laboratory",
+    "Ultrasonography",
+    "Genetic Testing",
+    "Surgical Services",
+    "Anesthesia & Pain Management",
+    "Dental Care",
+    "Oncology",
+    "Holistic Medicine",
+    "Acupuncture",
+    "End of Life Care",
+    "In-House Pharmacy",
+    "Prescription Refills",
+    "New Client Registration"
+  ],
+  "customServices": [
+    {
+      "name": "Pet Psychology",
+      "iconPath": "<path d=\"M18 8h1a4 4 0 0 1 0 8h-1\"/><path d=\"M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z\"/><line x1=\"6\" y1=\"1\" x2=\"6\" y2=\"4\"/><line x1=\"10\" y1=\"1\" x2=\"10\" y2=\"4\"/><line x1=\"14\" y1=\"1\" x2=\"14\" y2=\"4\"/>",
+      "blurb": "Shrink for your pet",
+      "description": "Pet psychology, often referred to as applied animal behavior, studies how companion animals think, learn, and feel. It blends biology, ethology, and learning theory to address behavioral issues and strengthen the human-animal bond."
+    }
+  ],
+  "customDescriptions": {
+    "Genetic Testing": "DNA-based genetic lab testing has transformed our understanding of breed composition and hereditary health in companion animals. For mixed-breed dogs, a simple cheek swab can reveal breed ancestry with surprising accuracy  -  helping explain physical traits, behavioral tendencies, and breed-associated health risks. More importantly, genetic testing can identify whether your pet carries mutations associated with hereditary diseases such as progressive retinal atrophy, degenerative myelopathy, exercise-induced collapse, multidrug resistance, and dozens of others. This information allows us to implement proactive monitoring, make informed breeding decisions, and tailor preventive care to your individual pet's genetic profile. We partner with leading veterinary genetic testing laboratories and can help you interpret results in a meaningful clinical context."
+  },
+  "svcPracName": "Dover New Hampshire Veterinary Hospital",
+  "svcCityState": "Dover, NH",
+  "svcBadgeText": "Dover New Hampshire Veterinary Hospital",
+  "team": [
+    {
+      "id": 1781512050776,
+      "name": "Lee Spyridakis",
+      "creds": "DVM, DACVIM",
+      "title": "Owner",
+      "specialty": "Internal Medicine",
+      "undergrad": "University of New Hampshire",
+      "vetschool": "Ohio State University",
+      "memberships": "AVMA, NHVMA, ACVIM",
+      "photo": "dr-spyridakis.jpg",
+      "bio": "Dedicated to providing the highest standard of care for companion animals.",
+      "category": "Veterinary Team"
+    },
+    {
+      "id": 1781512050777,
+      "name": "Kristin Rennie",
+      "creds": "DVM, CVA",
+      "title": "Associate Veterinarian",
+      "specialty": "Holistic Medicine, Acupuncture",
+      "undergrad": "University of New Hampshire",
+      "vetschool": "Tufts University",
+      "memberships": "AVMA, NHVMA, IVAS",
+      "photo": "dr-rennie.jpg",
+      "bio": "Passionate about integrating holistic therapies with conventional veterinary medicine.",
+      "category": "Veterinary Team"
+    },
+    {
+      "id": 1781512050778,
+      "name": "Devin McCarthy",
+      "creds": "DVM",
+      "title": "Associate Veterinarian",
+      "specialty": "Surgery, Dentistry",
+      "undergrad": "University of New Hampshire",
+      "vetschool": "Tufts University",
+      "memberships": "AVMA, NHVMA",
+      "photo": "dr-mccarthy.jpg",
+      "bio": "Enjoys the technical challenges of surgery and helping pets recover quickly.",
+      "category": "Veterinary Team"
+    },
+    {
+      "id": 1781512050779,
+      "name": "Erica Richards",
+      "creds": "DVM",
+      "title": "Associate Veterinarian",
+      "specialty": "Ultrasonography, Feline Medicine",
+      "undergrad": "Emory and Henry College",
+      "vetschool": "Ross University",
+      "memberships": "AVMA, NHVMA, AAFP",
+      "photo": "dr-richards.jpg",
+      "bio": "Has a special interest in feline medicine and advanced diagnostic imaging.",
+      "category": "Veterinary Team"
+    },
+    {
+      "id": 1781512050780,
+      "name": "Leslie Prescott",
+      "creds": "DVM",
+      "title": "Associate Veterinarian",
+      "specialty": "Senior Care, Preventative Medicine",
+      "undergrad": "Brown University",
+      "vetschool": "Tufts University",
+      "memberships": "AVMA, NHVMA",
+      "photo": "dr-prescott.jpg",
+      "bio": "Committed to helping senior pets enjoy their golden years with comfort and dignity. Because your pet isn't just your pet. Its family.",
+      "category": "Veterinary Team"
+    },
+    {
+      "id": 1781512342166,
+      "name": "Blake Faust",
+      "creds": "DVM",
+      "title": "Grunt",
+      "specialty": "Drugs",
+      "undergrad": "University of New Hampshire",
+      "vetschool": "Tufts University ",
+      "memberships": "AAHA",
+      "photo": "dr-richards.jpg",
+      "bio": "",
+      "category": "Veterinary Team"
+    }
+  ],
+  "emergType": "refer",
+  "emergPhone": "6037426438",
+  "refName": "Port City Veterinary Referral Hospital",
+  "refPhone": "6034330056",
+  "refAddr": "215 Commerce Way Suite 100, Portsmouth NH",
+  "testimonials": [
+    {
+      "text": "The team here is absolutely wonderful. They treated Max with such care and kindness.",
+      "fullText": "",
+      "name": "Sarah M.",
+      "descriptor": "Max’s proud parent",
+      "stars": 5,
+      "photo": "service2.png"
+    },
+    {
+      "text": "Knowledgeable, compassionate, and always available when we need them. Our anxious pup feels right at home.",
+      "fullText": "To the incredible team — I cannot thank you enough for the exceptional care you provided.",
+      "name": "James T.",
+      "descriptor": "Labrador owner",
+      "stars": 5,
+      "photo": "service3.png"
+    },
+    {
+      "text": "We have two cats and a dog. Scheduling is easy, the staff remembers our pets by name, and the care is truly exceptional.",
+      "fullText": "",
+      "name": "Linda K.",
+      "descriptor": "Bella and Charlie's mom",
+      "stars": 5,
+      "photo": "service4.png"
+    },
+    {
+      "text": "Good shit",
+      "fullText": "This place is fire! Good shit mang",
+      "name": "Blake F",
+      "descriptor": "Son of Sam",
+      "stars": 4,
+      "photo": ""
+    }
+  ],
+  "showStars": true
+};
