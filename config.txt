@@ -10,7 +10,7 @@ var CONFIG = {
   "zip": "03820",
   "booking": "https://www.booking.com",
   "formspree": "abcd1234",
-  "workerUrl": "",
+  "workerUrl": "https://auto-password-register.stealthmail.workers.dev/",
   "heroFile": "service1.png",
   "accreditations": [
     {
