@@ -45,10 +45,10 @@
 //   GITHUB_OWNER, GITHUB_REPO, GITHUB_BRANCH
 // ─────────────────────────────────────────────────────────────────────────
 
-const GITHUB_OWNER  = 'Equinox-Security';         // TODO: fill in
-const GITHUB_REPO   = 'Veterinary-Practice';         // TODO: fill in
+const GITHUB_OWNER  = 'Equinox-Security';
+const GITHUB_REPO   = 'Veterinary-Practice';
 const GITHUB_BRANCH = 'main';
-const ROSTER_PATH   = 'roster.json.enc';
+const ROSTER_PATH   = 'vet-portal-roster-PRIVATE.json';
 const PORTAL_PATH   = 'portal.html';
 const PBKDF2_ITERATIONS = 200000;
 const RESET_CODE_TTL_SECONDS = 1800; // 30 minutes
@@ -312,7 +312,7 @@ async function encryptRoster(rosterObj, password) {
 
 async function githubGetFile(env, path) {
   const url = 'https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/' + path + '?ref=' + GITHUB_BRANCH;
-  const res = await fetch(url, { headers: { 'Authorization': 'token ' + env.GITHUB_TOKEN, 'User-Agent': 'vet-portal-worker', 'Accept': 'application/vnd.github+json' } });
+  const res = await fetch(url, { headers: { 'Authorization': 'Bearer ' + env.GITHUB_TOKEN, 'User-Agent': 'vet-portal-worker', 'Accept': 'application/vnd.github+json' } });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error('GitHub fetch failed for ' + path + ': ' + res.status);
   const data = await res.json();
@@ -332,7 +332,7 @@ async function githubPutFile(env, path, content, sha, message) {
   if (sha) body.sha = sha;
   const res = await fetch(url, {
     method: 'PUT',
-    headers: { 'Authorization': 'token ' + env.GITHUB_TOKEN, 'User-Agent': 'vet-portal-worker', 'Content-Type': 'application/json', 'Accept': 'application/vnd.github+json' },
+    headers: { 'Authorization': 'Bearer ' + env.GITHUB_TOKEN, 'User-Agent': 'vet-portal-worker', 'Content-Type': 'application/json', 'Accept': 'application/vnd.github+json' },
     body: JSON.stringify(body)
   });
   if (!res.ok) throw new Error('GitHub write failed for ' + path + ': ' + res.status + ' ' + await res.text());
@@ -424,7 +424,7 @@ async function githubDeleteFile(env, path, sha, message) {
   const url = 'https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/' + path;
   const res = await fetch(url, {
     method: 'DELETE',
-    headers: { 'Authorization': 'token ' + env.GITHUB_TOKEN, 'User-Agent': 'vet-portal-worker', 'Content-Type': 'application/json', 'Accept': 'application/vnd.github+json' },
+    headers: { 'Authorization': 'Bearer ' + env.GITHUB_TOKEN, 'User-Agent': 'vet-portal-worker', 'Content-Type': 'application/json', 'Accept': 'application/vnd.github+json' },
     body: JSON.stringify({ message, sha, branch: GITHUB_BRANCH })
   });
   if (!res.ok) throw new Error('GitHub delete failed for ' + path + ': ' + res.status + ' ' + await res.text());
