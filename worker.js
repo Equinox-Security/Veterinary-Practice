@@ -100,7 +100,16 @@ export default {
   }
 };
 
+function requireSecrets(env, names) {
+  const missing = names.filter(n => !env[n]);
+  if (missing.length) {
+    throw new Error('Missing Worker secret(s): ' + missing.join(', ') + '. Check Cloudflare → your Worker → Settings → Variables — the name must match exactly (case-sensitive, no extra spaces).');
+  }
+}
+
 async function handleRegister(payload, env) {
+    requireSecrets(env, ['GITHUB_TOKEN', 'ROSTER_PASSWORD']);
+
     // Registration now posts directly to this Worker from portal.html — same
     // as password reset already did. Formspree is no longer involved in this
     // path at all (their ToS prohibits forms that collect passwords, which is
@@ -168,6 +177,9 @@ async function handleRegister(payload, env) {
 // Always returns the same generic response whether or not the username
 // exists, so this endpoint can't be used to check which usernames are real.
 async function handleResetRequest(payload, env) {
+  requireSecrets(env, ['GITHUB_TOKEN', 'ROSTER_PASSWORD']);
+  if (!env.RESET_TOKENS) throw new Error('RESET_TOKENS KV namespace is not bound. Check Cloudflare → your Worker → Settings → Variables → KV Namespace Bindings.');
+
   const username = (payload.username || '').trim();
   const generic = new Response('If that username exists, a reset code has been sent to the email on file.', { status: 200 });
   if (!username) return generic;
@@ -190,6 +202,9 @@ async function handleResetRequest(payload, env) {
 
 // ── Step 2: client submits the code + their new password ────────────────
 async function handleResetConfirm(payload, env) {
+  requireSecrets(env, ['GITHUB_TOKEN', 'ROSTER_PASSWORD']);
+  if (!env.RESET_TOKENS) throw new Error('RESET_TOKENS KV namespace is not bound. Check Cloudflare → your Worker → Settings → Variables → KV Namespace Bindings.');
+
   const username    = (payload.username || '').trim();
   const code        = (payload.code || '').trim();
   const newPassword = (payload.newPassword || '').trim();
