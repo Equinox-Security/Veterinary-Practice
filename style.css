@@ -220,7 +220,6 @@ footer strong{color:rgba(255,255,255,0.9);font-weight:500;}
 .btn{background:linear-gradient(135deg, #122d40 71%, #5eb3e4 100%);border-color:transparent;}
 .card{border-top:3px solid transparent;border-image:linear-gradient(135deg, #122d40 71%, #5eb3e4 100%) 1;}
 .hero-badge{background:linear-gradient(135deg, #122d40 71%, #5eb3e4 100%);border-color:transparent;}
-#header-vignette{position:fixed;top:0;left:0;width:100%;pointer-events:none;z-index:999;background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.55) 100%);}
 
 .form-row{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:1rem;}
 /* WIZARD-DATA:{"version":1,"file":"style.css","data":{"theme":"gradient","gradBase":"#122d40","gradAccent":"#5eb3e4","gradDir":"135deg","gradSplit":"71","tweaks":{"heroOpacity":0.9,"overlayTop":0.05,"overlayBottom":0.6,"svcOpacity":0.92,"cardRadius":10,"emergencyColor":"#680d03"}}} */
