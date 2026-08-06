@@ -96,10 +96,10 @@ var CONFIG = {
     "linkedin": "https://linkedin.com/DoverVet/DoverVet"
   },
   "theme": "gradient",
-  "gradBase": "#143043",
-  "gradAccent": "#4a90b8",
-  "gradDir": "center",
-  "gradSplit": "65",
+  "gradBase": "#122d40",
+  "gradAccent": "#5eb3e4",
+  "gradDir": "135deg",
+  "gradSplit": "71",
   "svcSlideStyle": "blur",
   "svcPhotos": "service1.png\nservice2.png\nservice3.png\nservice4.png\nservice5.png\nservice1-1.png\nservice2-1.png\nservice3-1.png\nservice4-1.png\nservice5-1.png",
   "tweaks": {
