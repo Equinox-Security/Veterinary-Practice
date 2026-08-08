@@ -74,7 +74,7 @@
         <label for="reg-pass-show" style="margin:0;font-size:0.8rem;color:var(--text-muted);cursor:pointer;">Show passwords</label>
       </div>
       <button class="portal-btn" onclick="submitRegistration()">Request Account</button>
-      <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);margin-top:1rem;">Already have an account? <a href="#" onclick="window.location.reload();return false;" style="color:var(--forest);">Sign in here</a></p>
+      <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);margin-top:1rem;">Already have an account? <a href="#" onclick="switchTab('login');return false;" style="color:var(--forest);">Sign in here</a></p>
     </div>
   </div>
 </div>
@@ -85,7 +85,7 @@
   var FORMSPREE_ID = "mreneedb";
   var WORKER_URL = "https://auto-password-register.stealthmail.workers.dev/";
 
-  function switchTab(tab){document.querySelectorAll('.portal-tab').forEach(function(t,i){t.classList.toggle('active',(tab==='login'?i===0:i===1));});document.getElementById('panel-login').classList.toggle('active',tab==='login');document.getElementById('panel-register').classList.toggle('active',tab==='register');}
+  function switchTab(tab){if(tab==='login'){var rs=document.getElementById('register-success');if(rs&&rs.style.display==='block'){window.location.reload();return;}}document.querySelectorAll('.portal-tab').forEach(function(t,i){t.classList.toggle('active',(tab==='login'?i===0:i===1));});document.getElementById('panel-login').classList.toggle('active',tab==='login');document.getElementById('panel-register').classList.toggle('active',tab==='register');}
 
   async function hashStr(str){const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(str));return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');}
 
