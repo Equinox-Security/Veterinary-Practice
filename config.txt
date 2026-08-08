@@ -1,6 +1,7 @@
 // engine: vet
 var CONFIG = {
   "pracName": "Dover New Hampshire Veterinary Hospital",
+  "shortName": "DNHVH",
   "tagline": "Compassionate Care for Your Companions",
   "phone": "603-742-6438",
   "email": "info@dovervet.com",
