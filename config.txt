@@ -9,7 +9,7 @@ var CONFIG = {
   "city": "Dover",
   "state": "NH",
   "zip": "03820",
-  "booking": "https://www.booking.com",
+  "booking": "",
   "formspree": "xdenaqdj",
   "workerUrl": "https://auto-password-register.stealthmail.workers.dev/",
   "heroFile": "service1.png",
