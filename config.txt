@@ -271,6 +271,22 @@ var CONFIG = {
       "descriptor": "Son of Sam",
       "stars": 4,
       "photo": ""
+    },
+    {
+      "name": "Billy Graham",
+      "descriptor": "Maximus",
+      "stars": 5,
+      "photo": "testimonial-submissions/2f163fbd496322dbb6d18c1a1c03fb15.png",
+      "text": "There once was a man from Nantucket",
+      "fullText": ""
+    },
+    {
+      "name": "Kelly Graham",
+      "descriptor": "Max",
+      "stars": 5,
+      "photo": "testimonial-submissions/4978702471e71920ea07e48b446d6e20.jpg",
+      "text": "No story to tell that you would ever believe",
+      "fullText": ""
     }
   ],
   "showStars": true
