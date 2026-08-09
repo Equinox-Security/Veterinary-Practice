@@ -10,7 +10,7 @@ var CONFIG = {
   "state": "NH",
   "zip": "03820",
   "booking": "https://www.booking.com",
-  "formspree": "mreneedb",
+  "formspree": "",
   "workerUrl": "https://auto-password-register.stealthmail.workers.dev/",
   "heroFile": "service1.png",
   "accreditations": [
