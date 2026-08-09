@@ -11,6 +11,7 @@ var CONFIG = {
   "zip": "03820",
   "booking": "",
   "formspree": "xdenaqdj",
+  "formspreePaid": false,
   "workerUrl": "https://auto-password-register.stealthmail.workers.dev/",
   "heroFile": "service1.png",
   "accreditations": [
