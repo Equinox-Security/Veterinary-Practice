@@ -11,7 +11,7 @@ var CONFIG = {
   "zip": "03820",
   "booking": "",
   "formspree": "xdenaqdj",
-  "formspreePaid": false,
+  "formspreePaid": true,
   "workerUrl": "",
   "heroFile": "service1.png",
   "accreditations": [
