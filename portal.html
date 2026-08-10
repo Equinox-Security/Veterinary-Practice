@@ -36,7 +36,7 @@
     <div id="panel-login" class="portal-panel active">
       <div class="portal-error" id="login-error" style="display:none;"></div>
       <div class="portal-field"><label>Username</label><input type="text" id="login-user" placeholder="Your username or email" autocomplete="username" /></div>
-      <p class="portal-hint">You'll be asked for your password on the next screen.</p>
+      <div class="portal-field"><label>Password</label><input type="password" id="login-pass" placeholder="Your password" autocomplete="current-password" /></div>
       <button class="portal-btn" onclick="doLogin()">Sign In</button>
     </div>
   </div>
@@ -46,11 +46,13 @@
 <script>
   var FORMSPREE_ID = "xdenaqdj";
   var WORKER_URL = "";
-  var CLIENTS = [{"username":"BillyG","hash":"7d5a87d5dc80fc6b70518e21648b3d15"}];
+  var LOGIN_SALT = "ikMI7/4eupYypQo2NyBl9Q==";
 
+  function b64u(s){var b=atob(s);var u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u;}
+  async function deriveOfflineHash(username,password,saltB64){var enc=new TextEncoder();var salt=b64u(saltB64);var keyMat=await crypto.subtle.importKey('raw',enc.encode(username.toLowerCase()+':'+password),{name:'PBKDF2'},false,['deriveBits']);var bits=await crypto.subtle.deriveBits({name:'PBKDF2',salt:salt,iterations:100000,hash:'SHA-256'},keyMat,128);return Array.from(new Uint8Array(bits)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');}
   function switchTab(tab){if(tab==='login'){var rs=document.getElementById('register-success');if(rs&&rs.style.display==='block'){window.location.reload();return;}}document.querySelectorAll('.portal-tab').forEach(function(t,i){t.classList.toggle('active',(tab==='login'?i===0:i===1));});document.getElementById('panel-login').classList.toggle('active',tab==='login');document.getElementById('panel-register').classList.toggle('active',tab==='register');}
 
-  async function doLogin(){var user=document.getElementById('login-user').value.trim();var err=document.getElementById('login-error');err.style.display='none';if(!user){err.textContent='Please enter your username.';err.style.display='block';return;}var btn=document.querySelector('#panel-login .portal-btn');if(btn)btn.disabled=true;if(WORKER_URL){try{var res=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'lookup_username',username:user})});if(res.ok){var data=await res.json();window['loc'+'ation'].href=data.hash+'.html';return;}else{err.textContent='Username not found. Please try again.';err.style.display='block';}}catch(e){err.textContent='Something went wrong. Please try again.';err.style.display='block';}}else{var match=CLIENTS.find(function(c){return c.username.toLowerCase()===user.toLowerCase();});if(match){window['loc'+'ation'].href=match.hash+'.html';return;}else{err.textContent='Username not found. Please try again.';err.style.display='block';}}if(btn)btn.disabled=false;}
+  async function doLogin(){var user=document.getElementById('login-user').value.trim();var err=document.getElementById('login-error');err.style.display='none';if(!user){err.textContent='Please enter your username.';err.style.display='block';return;}var btn=document.querySelector('#panel-login .portal-btn');if(btn)btn.disabled=true;if(WORKER_URL){try{var res=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'lookup_username',username:user})});if(res.ok){var data=await res.json();window['loc'+'ation'].href=data.hash+'.html';return;}else{err.textContent='Username not found. Please try again.';err.style.display='block';}}catch(e){err.textContent='Something went wrong. Please try again.';err.style.display='block';}}else{var passEl=document.getElementById('login-pass');var pass=passEl?passEl.value:'';if(!pass){err.textContent='Please enter your password.';err.style.display='block';if(btn)btn.disabled=false;return;}try{var candidateHash=await deriveOfflineHash(user,pass,LOGIN_SALT);var checkRes=await fetch(candidateHash+'.html',{method:'HEAD'});if(checkRes.ok){window['loc'+'ation'].href=candidateHash+'.html';return;}else{err.textContent='Invalid username or password. Please try again.';err.style.display='block';}}catch(e){err.textContent='Something went wrong. Please try again.';err.style.display='block';}}if(btn)btn.disabled=false;}
 
   document.getElementById('login-user').addEventListener('keydown',function(e){if(e.key==='Enter')doLogin();});
 </script>
