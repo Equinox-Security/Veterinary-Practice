@@ -12,6 +12,7 @@ var CONFIG = {
   "booking": "",
   "formspree": "xdenaqdj",
   "formspreePaid": false,
+  "loginSalt": "ikMI7/4eupYypQo2NyBl9Q==",
   "workerUrl": "",
   "heroFile": "service1.png",
   "accreditations": [
