@@ -12,7 +12,7 @@ var CONFIG = {
   "booking": "",
   "formspree": "xdenaqdj",
   "formspreePaid": false,
-  "workerUrl": "https://auto-password-register.stealthmail.workers.dev/",
+  "workerUrl": "",
   "heroFile": "service1.png",
   "accreditations": [
     {
