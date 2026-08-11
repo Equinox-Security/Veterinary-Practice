@@ -71,7 +71,7 @@
       <h2>Send Us a Message</h2>
       <div id="contact-success" style="display:none;background:var(--forest-light);color:var(--forest);border:1px solid var(--forest);border-radius:6px;padding:0.75rem 1rem;font-size:0.85rem;margin-bottom:1rem;">Thanks! Your message has been sent.</div>
       <div id="contact-error" style="display:none;background:#2e1a1a;color:#ff6b6b;border:1px solid #c0392b;border-radius:6px;padding:0.75rem 1rem;font-size:0.85rem;margin-bottom:1rem;"></div>
-      <form onsubmit="return handleWorkerMessageSubmit(event,this,'https://auto-password-register.stealthmail.workers.dev/','contact-success','contact-error')">
+      <form onsubmit="return handleFormspreeSubmit(event,this,'https://formspree.io/f/xdenaqdj','contact-success','contact-error')">
         <div style="display:flex;flex-direction:column;gap:0.3rem;margin-bottom:1rem;">
           <label style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);">Your Name</label>
           <input type="text" name="name" required placeholder="First Last" style="padding:0.65rem 0.9rem;border:1.5px solid var(--border);border-radius:7px;font-size:0.875rem;outline:none;font-family:inherit;">
