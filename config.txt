@@ -14,6 +14,7 @@ var CONFIG = {
   "formspreePaid": false,
   "loginSalt": "ikMI7/4eupYypQo2NyBl9Q==",
   "siteUrl": "https://equinox-security.github.io/Veterinary-Practice/",
+  "dueSoonDays": "",
   "workerUrl": "https://auto-password-register.stealthmail.workers.dev/",
   "heroFile": "service1.png",
   "accreditations": [
