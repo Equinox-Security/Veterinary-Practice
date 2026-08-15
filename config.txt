@@ -17,7 +17,7 @@ var CONFIG = {
   "dueSoonDays": "",
   "goatcounter": "<script data-goatcounter=\"https://veterinary-practice.goatcounter.com/count\"\n        async src=\"//gc.zgo.at/count.js\"></script>",
   "biometricsEnabled": true,
-  "appIcon": "vet-app.png",
+  "appIcon": true,
   "workerUrl": "https://auto-password-register.stealthmail.workers.dev/",
   "heroFile": "service1.png",
   "accreditations": [
