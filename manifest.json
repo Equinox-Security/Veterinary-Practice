@@ -4,7 +4,7 @@
   "start_url": "portal.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2d5016",
+  "theme_color": "#122d40",
   "icons": [
     {
       "src": "vet-app.png",
