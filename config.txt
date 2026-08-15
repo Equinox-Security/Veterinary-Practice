@@ -16,6 +16,8 @@ var CONFIG = {
   "siteUrl": "https://equinox-security.github.io/Veterinary-Practice/",
   "dueSoonDays": "",
   "goatcounter": "<script data-goatcounter=\"https://veterinary-practice.goatcounter.com/count\"\n        async src=\"//gc.zgo.at/count.js\"></script>",
+  "biometricsEnabled": true,
+  "appIcon": "vet-app.png",
   "workerUrl": "https://auto-password-register.stealthmail.workers.dev/",
   "heroFile": "service1.png",
   "accreditations": [
