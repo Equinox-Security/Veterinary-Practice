@@ -1,14 +1,14 @@
 // engine: vet
 var CONFIG = {
-  "pracName": "Dover New Hampshire Veterinary Hospital",
-  "shortName": "DNHVH",
+  "pracName": "Kim's Animal Rescue",
+  "shortName": "KAR",
   "tagline": "Compassionate Care for Your Companions",
-  "phone": "603-742-6438",
-  "email": "info@dovervet.com",
-  "address": "96 Durham Road",
-  "city": "Dover",
+  "phone": "603-555-5555",
+  "email": "info@catrescue.com",
+  "address": "123 Main Street",
+  "city": "Lee",
   "state": "NH",
-  "zip": "03820",
+  "zip": "03861",
   "booking": "",
   "formspree": "xdenaqdj",
   "formspreePaid": false,
@@ -67,7 +67,7 @@ var CONFIG = {
       "name": "Preventing and alleviating fear, anxiety, and stress in pets",
       "url": "https://www.fearfree.com/",
       "offsetY": 0,
-      "enabled": false
+      "enabled": true
     },
     {
       "id": 1782090189321,
@@ -96,12 +96,12 @@ var CONFIG = {
     "sun": "Closed"
   },
   "social": {
-    "facebook": "https://www.facebook.com/DoverVet/",
-    "instagram": "https://www.instagram.com/DoverVet/",
-    "twitter": "https://www.x.com/DoverVet/",
-    "youtube": "https://www.youtube.com/@DoverVet/",
-    "tiktok": "https://tiktok.com/@DoverVet/",
-    "linkedin": "https://linkedin.com/DoverVet/DoverVet"
+    "facebook": "https://www.facebook.com/AnimalRescue/",
+    "instagram": "https://www.instagram.com/AnimalRescue/",
+    "twitter": "https://www.x.com/AnimalRescue/",
+    "youtube": "https://www.youtube.com/@AnimalRescue/",
+    "tiktok": "https://tiktok.com/@AnimalRescue/",
+    "linkedin": "https://linkedin.com/AnimalRescue/AnimalRescue"
   },
   "theme": "gradient",
   "gradBase": "#122d40",
@@ -224,19 +224,6 @@ var CONFIG = {
       "memberships": "AVMA, NHVMA",
       "photo": "dr-prescott.jpg",
       "bio": "Committed to helping senior pets enjoy their golden years with comfort and dignity. Because your pet isn't just your pet. Its family.",
-      "category": "Veterinary Team"
-    },
-    {
-      "id": 1781512342166,
-      "name": "Blake Faust",
-      "creds": "DVM",
-      "title": "Grunt",
-      "specialty": "Drugs",
-      "undergrad": "University of New Hampshire",
-      "vetschool": "Tufts University ",
-      "memberships": "AAHA",
-      "photo": "dr-richards.jpg",
-      "bio": "",
       "category": "Veterinary Team"
     }
   ],
